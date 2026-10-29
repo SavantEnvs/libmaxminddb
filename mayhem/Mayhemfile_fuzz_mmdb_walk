@@ -1,0 +1,10 @@
+project: savantenvs/libmaxminddb
+target: fuzz_mmdb_walk
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/fuzz_mmdb_walk/testsuite
+cmds:
+  - cmd: /mayhem/fuzz_mmdb_walk
+    libfuzzer: true
+    dictionary: /mayhem/mayhem/fuzz_mmdb_walk/fuzz_mmdb_walk.dict
+    timeout: 5

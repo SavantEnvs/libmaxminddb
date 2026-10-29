@@ -1,0 +1,10 @@
+project: savantenvs/libmaxminddb
+target: fuzz_mmdb
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/fuzz_mmdb/testsuite
+cmds:
+  - cmd: /mayhem/fuzz_mmdb
+    libfuzzer: true
+    dictionary: /mayhem/mayhem/fuzz_mmdb/fuzz_mmdb.dict
+    timeout: 5
